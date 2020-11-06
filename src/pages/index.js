@@ -13,6 +13,8 @@ const languages = {
 const BlogPage = ({ data }) => {
   const { allMarkdownRemark, latest } = data
   const { distinct } = allMarkdownRemark
+  
+  document.location.href = "https://sova.dev"
 
   return (
     <Layout>
