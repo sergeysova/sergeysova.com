@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ru" prefix="og: https://ogp.me/ns#" class="astro-CWJ4773T">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="/favicon.png">
+    <title>Используйте логические переменные · Sergey Sova</title>
+    <meta property="og:site_name" content="Sergey Sova">
+    <meta property="og:title" content="Используйте логические переменные">
+    <meta property="og:description" content="Вместо простой проверки логического выражения, лучше присвоить его значение переменной, которая сделает смысл проверки очевидным.">
+    
+    <meta content="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://sergeysova.com/ru/use-logical-vars-to-docs">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67236238-5"></script>
+    <script type="application/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-67236238-5');
+    </script>
+  <link rel="stylesheet" href="/assets/1c67243b.2846fd3b.css" />
+<link rel="stylesheet" href="/assets/41a78ed3.64597b67.css" /><script type="module" src="/page.3aa82516.js"></script></head>
+  <body class="astro-CWJ4773T">
+    <main class="markdown astro-O6WUMDOE">
+    <div class="go-back astro-O6WUMDOE">
+      <a href="/" class="astro-O6WUMDOE">
+        
+        Go home
+      </a>
+    </div>
+    <h1 class="astro-O6WUMDOE">Используйте логические переменные</h1>
+    <blockquote><p>Вместо простой проверки логического выражения, лучше присвоить его значение переменной, которая сделает смысл проверки очевидным.</p></blockquote><pre class="language-js"><code is:raw="" class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>
+  elementIndex <span class="token operator">&#x3C;</span> <span class="token number">0</span> <span class="token operator">||</span>
+  <span class="token constant">MAX_ELEMENTS</span> <span class="token operator">&#x3C;</span> elementIndex <span class="token operator">||</span>
+  elementIndex <span class="token operator">===</span> lastElementIndex
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre><p>Что тут написано?</p><p>Скорее всего рядовой разработчик пропустит эту строку и даже читать не будет. Хорошо, если автор оставил поясняющий комментарий.</p><p>Исправить ситуацию, можно, присвоив проверкам имена:</p><pre class="language-js"><code is:raw="" class="language-js"><span class="token keyword">const</span> finished <span class="token operator">=</span> elementIndex <span class="token operator">&#x3C;</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token constant">MAX_ELEMENTS</span> <span class="token operator">&#x3C;</span> elementIndex<span class="token punctuation">;</span>
+<span class="token keyword">const</span> repeatedEntry <span class="token operator">=</span> elementIndex <span class="token operator">===</span> lastElementIndex<span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>finished <span class="token operator">||</span> repeatedEntry<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span></code></pre><p>Стало намного проще осознать назначение условного выражения.</p>
+  </main>
+    
+
+    
+  </body>
+</html>
+
+
+
